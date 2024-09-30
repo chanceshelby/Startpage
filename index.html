@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,13 +55,13 @@ textarea.w-input, textarea.w-select {
 
 .form-block {
   width: 45%;
-  height: 100%;
+  height: auto;
   position: absolute;
 }
 
 .form-block-2 {
   width: 45%;
-  height: 100%;
+  height: auto;
   position: absolute;
   right: 0;
 }
@@ -98,7 +99,7 @@ textarea.w-input, textarea.w-select {
 }
     </style>
 
-    
+
     <title>Start Page</title>
     <script>
         (function(window, document){
@@ -125,45 +126,74 @@ textarea.w-input, textarea.w-select {
         textarea {
             width: 100%;
             max-width: 100%;
-            height: 200px;
+            height: 235px;
             resize: none;
             margin-bottom: 10px;
             border-radius: 5px;
             padding: 10px;
             box-sizing: border-box;
             border: 1px solid #ccc;
+            font-size: 13px;
         }
 
+        .textbox2 {
+          height: 275px;
+          font-size: 13px;
+        }
     </style>
 </head>
 <body>
 
     <!-- Form 1 -->
-    <div class="w-form">
-        <form id="email-form-2" name="email-form-2" method="GET">
-            <div class="text-block">Start Page</div>
-        </form>
-    </div>
+            <div class="text-block">
 
+    <a href="https://teams.microsoft.com">
+    <img src="https://mailmeteor.com/logos/assets/PNG/Microsoft_Office_Teams_Logo_512px.png" style="width:40px;padding:5px;"></img></a>
+
+    <a href="https://www.office.com/launch/Word/">
+    <img src="https://mailmeteor.com/logos/assets/PNG/Microsoft_Office_Word_Logo_512px.png" style="width:40px;padding:5px;"></img></a>
+
+    <a href="https://www.office.com/launch/Excel/">
+    <img src="https://cdn.iconscout.com/icon/free/png-256/free-excel-app-logo-icon-download-in-svg-png-gif-file-formats--microsoft-brand-brands-pack-logos-icons-190764.png?f=webp&w=256" style="width:40px;padding:5px;"></img></a>
+
+    <a href="https://www.office.com/launch/PowerPoint/">
+    <img src="https://cdn.freebiesupply.com/logos/large/2x/microsoft-powerpoint-2013-logo-svg-vector.svg" style="width:40px;padding:5px;"></img></a>
+
+    <a href="https://outlook.office.com">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg/2203px-Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg.png" style="width:40px;padding:5px;"></img></a>
+
+    <a href="https://gmail.com">
+    <img src="https://mailmeteor.com/logos/assets/PNG/Gmail_Logo_512px.png" style="width:40px;padding:5px;"></img></a>
+
+    <a href="https://docs.google.com">
+    <img src="https://mailmeteor.com/logos/assets/PNG/Google_Docs_Logo_512px.png" style="width:40px;padding:5px;"></img></a>
+
+    <a href="https://sheets.google.com">
+    <img src="https://mailmeteor.com/logos/assets/PNG/Google_Sheets_Logo_512px.png" style="width:40px;padding:5px;"></img></a>
+
+    <a href="https://slides.google.com">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Google_Slides_2020_Logo.svg/512px-Google_Slides_2020_Logo.svg.png" style="width:40px;padding:5px;"></img></a>
+        </div>
     <!-- Form 2 -->
     <div class="w-form">
         <form id="email-form-4" name="email-form-4" method="GET">
-            <textarea placeholder="List 1"></textarea>
+            <textarea placeholder="List 1" id="textarea"></textarea>
+
             <script>
-       /* localstorage polyfill from https://gist.github.com/350433 */
-       ("undefined" == typeof window.localStorage || "undefined" == typeof window.sessionStorage) && function () {
-         function e(f) {
-           function e(a) {
+            /* localstorage polyfill from https://gist.github.com/350433 */
+            ("undefined" == typeof window.localStorage || "undefined" == typeof window.sessionStorage) && function () {
+            function e(f) {
+            function e(a) {
              var b;
              b = new Date;
              b.setTime(b.getTime() + 31536E6);
              document.cookie = "localStorage=" + a + ("; expires=" + b.toGMTString()) + "; path=/"
-           }
-           function g(a) {
+            }
+            function g(a) {
              a = JSON.stringify(a);
              "session" == f ? window.name = a : e(a)
-           }
-           var d = function () {
+            }
+            var d = function () {
              var a;
              if ("session" == f) a = window.name;
              else a: {
@@ -181,8 +211,8 @@ textarea.w-input, textarea.w-select {
                a = null
              }
              return a ? JSON.parse(a) : {}
-           }();
-           return {
+            }();
+            return {
              length: 0,
              clear: function () {
                d = {};
@@ -211,49 +241,50 @@ textarea.w-input, textarea.w-select {
                this.length++;
                g(d)
              }
-           }
-         }
-         if ("undefined" == typeof window.localStorage) window.localStorage = new e("local");
-         if ("undefined" == typeof window.sessionStorage) window.sessionStorage =
-           new e("session")
-       }();
-       /* the code */
-       var n = document.getElementById("textarea");
-       /* save */
-       var s = function () {
-         localStorage.setItem("textarea", n.value);
-       }
-       /* retrieve (only on page load) */
-       if (window.localStorage) {
-         n.value = localStorage.getItem("textarea");
-       }
-       /* autosave onchange and every 500ms and when you close the window */
-       n.onchange = s();
-       setInterval(s, 500);
-       window.onunload = s();
-     </script>
+            }
+            }
+            if ("undefined" == typeof window.localStorage) window.localStorage = new e("local");
+            if ("undefined" == typeof window.sessionStorage) window.sessionStorage =
+            new e("session")
+            }();
+            /* the code */
+            var n = document.getElementById("textarea");
+            /* save */
+            var s = function () {
+            localStorage.setItem("textarea", n.value);
+            }
+            /* retrieve (only on page load) */
+            if (window.localStorage) {
+            n.value = localStorage.getItem("textarea");
+            }
+            /* autosave onchange and every 500ms and when you close the window */
+            n.onchange = s();
+            setInterval(s, 500);
+            window.onunload = s();
+            </script>
         </form>
     </div>
 
     <!-- Form 3 -->
     <div class="form-block w-form">
         <form id="email-form" name="email-form" method="GET">
-            <textarea placeholder="List 2"></textarea>
+            <textarea class="textbox2" id="textarea1" placeholder="List 2"></textarea>
+
             <script>
-       /* localstorage polyfill from https://gist.github.com/350433 */
-       ("undefined" == typeof window.localStorage || "undefined" == typeof window.sessionStorage) && function () {
-         function e(f) {
-           function e(a) {
+            /* localstorage polyfill from https://gist.github.com/350433 */
+            ("undefined" == typeof window.localStorage || "undefined" == typeof window.sessionStorage) && function () {
+            function e(f) {
+            function e(a) {
              var b;
              b = new Date;
              b.setTime(b.getTime() + 31536E6);
              document.cookie = "localStorage=" + a + ("; expires=" + b.toGMTString()) + "; path=/"
-           }
-           function g(a) {
+            }
+            function g(a) {
              a = JSON.stringify(a);
              "session" == f ? window.name = a : e(a)
-           }
-           var d = function () {
+            }
+            var d = function () {
              var a;
              if ("session" == f) a = window.name;
              else a: {
@@ -271,8 +302,8 @@ textarea.w-input, textarea.w-select {
                a = null
              }
              return a ? JSON.parse(a) : {}
-           }();
-           return {
+            }();
+            return {
              length: 0,
              clear: function () {
                d = {};
@@ -301,49 +332,50 @@ textarea.w-input, textarea.w-select {
                this.length++;
                g(d)
              }
-           }
-         }
-         if ("undefined" == typeof window.localStorage) window.localStorage = new e("local");
-         if ("undefined" == typeof window.sessionStorage) window.sessionStorage =
-           new e("session")
-       }();
-       /* the code */
-       var n = document.getElementById("textarea");
-       /* save */
-       var s = function () {
-         localStorage.setItem("textarea", n.value);
-       }
-       /* retrieve (only on page load) */
-       if (window.localStorage) {
-         n.value = localStorage.getItem("textarea");
-       }
-       /* autosave onchange and every 500ms and when you close the window */
-       n.onchange = s();
-       setInterval(s, 500);
-       window.onunload = s();
-     </script>
+            }
+            }
+            if ("undefined" == typeof window.localStorage) window.localStorage = new e("local");
+            if ("undefined" == typeof window.sessionStorage) window.sessionStorage =
+            new e("session")
+            }();
+            /* the code */
+            var nn = document.getElementById("textarea1");
+            /* save */
+            var ss = function () {
+            localStorage.setItem("textarea1", nn.value);
+            }
+            /* retrieve (only on page load) */
+            if (window.localStorage) {
+            nn.value = localStorage.getItem("textarea1");
+            }
+            /* autosave onchange and every 500ms and when you close the window */
+            nn.onchange = ss();
+            setInterval(ss, 500);
+            window.onunload = ss();
+            </script>
         </form>
     </div>
 
     <!-- Form 4 -->
     <div class="form-block-2 w-form">
         <form id="email-form-3" name="email-form-3" method="GET">
-            <textarea placeholder="List 3"></textarea>
+            <textarea class="textbox2" placeholder="List 3" id="textarea3"></textarea>
+
             <script>
-       /* localstorage polyfill from https://gist.github.com/350433 */
-       ("undefined" == typeof window.localStorage || "undefined" == typeof window.sessionStorage) && function () {
-         function e(f) {
-           function e(a) {
+            /* localstorage polyfill from https://gist.github.com/350433 */
+            ("undefined" == typeof window.localStorage || "undefined" == typeof window.sessionStorage) && function () {
+            function e(f) {
+            function e(a) {
              var b;
              b = new Date;
              b.setTime(b.getTime() + 31536E6);
              document.cookie = "localStorage=" + a + ("; expires=" + b.toGMTString()) + "; path=/"
-           }
-           function g(a) {
+            }
+            function g(a) {
              a = JSON.stringify(a);
              "session" == f ? window.name = a : e(a)
-           }
-           var d = function () {
+            }
+            var d = function () {
              var a;
              if ("session" == f) a = window.name;
              else a: {
@@ -361,8 +393,8 @@ textarea.w-input, textarea.w-select {
                a = null
              }
              return a ? JSON.parse(a) : {}
-           }();
-           return {
+            }();
+            return {
              length: 0,
              clear: function () {
                d = {};
@@ -391,27 +423,27 @@ textarea.w-input, textarea.w-select {
                this.length++;
                g(d)
              }
-           }
-         }
-         if ("undefined" == typeof window.localStorage) window.localStorage = new e("local");
-         if ("undefined" == typeof window.sessionStorage) window.sessionStorage =
-           new e("session")
-       }();
-       /* the code */
-       var n = document.getElementById("textarea");
-       /* save */
-       var s = function () {
-         localStorage.setItem("textarea", n.value);
-       }
-       /* retrieve (only on page load) */
-       if (window.localStorage) {
-         n.value = localStorage.getItem("textarea");
-       }
-       /* autosave onchange and every 500ms and when you close the window */
-       n.onchange = s();
-       setInterval(s, 500);
-       window.onunload = s();
-     </script>
+            }
+            }
+            if ("undefined" == typeof window.localStorage) window.localStorage = new e("local");
+            if ("undefined" == typeof window.sessionStorage) window.sessionStorage =
+            new e("session")
+            }();
+            /* the code */
+            var nnn = document.getElementById("textarea3");
+            /* save */
+            var sss = function () {
+            localStorage.setItem("textarea3", nnn.value);
+            }
+            /* retrieve (only on page load) */
+            if (window.localStorage) {
+            nnn.value = localStorage.getItem("textarea3");
+            }
+            /* autosave onchange and every 500ms and when you close the window */
+            nnn.onchange = sss();
+            setInterval(sss, 500);
+            window.onunload = sss();
+            </script>
         </form>
     </div>
 
